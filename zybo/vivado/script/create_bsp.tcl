@@ -1,14 +1,15 @@
 set origin_dir "."
 
+file mkdir ${origin_dir}/../prj/ad_refkit/ad_refkit.sdk
 # Set SDK workspace
 setws ${origin_dir}/../prj/ad_refkit/ad_refkit.sdk 
 # Create a HW project
-createhw -name hw1 -hwspec ${origin_dir}/../prj/ad_refkit/ad_refkit.sdk/zybo_top.hdf
+createhw -name hw1 -hwspec ${origin_dir}/../prj/ad_refkit/zybo_top.xsa 
 # Create a BSP project
 createbsp -name standalone_bsp_0 -hwproject hw1 -proc ps7_cortexa9_0 -os standalone
 ## Create application project
-#createapp -name hello -hwproject hw1 -bsp bsp1 -proc ps7_cortexa9_0 -os standalone \
-#-lang C -app {Hello World}
+createapp -name hello -hwproject hw1 -bsp standalone_bsp_0 -proc ps7_cortexa9_0 -os standalone \
+-lang C -app {Hello World}
 # Build all projects
 projects -build
 ## Connect to a remote hw_server
@@ -29,3 +30,4 @@ projects -build
 #puts [rrd]
 ## Resume the target
 #con
+exit

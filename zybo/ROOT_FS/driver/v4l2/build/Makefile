@@ -6,8 +6,8 @@ SRC_PATH       ?= ../src
 INCLUDE_PATH   ?= ../include
 XLNX_SDK_DIR   ?= ../../../zynq_bsp/ps7_cortexa9_0
 XLNX_HDR_DIR   ?= $(XLNX_SDK_DIR)/include
-XLNX_VDMA_DIR  ?= $(XLNX_SDK_DIR)/libsrc/axivdma_v6_6/src
-XLNX_MIPI_DIR  ?= $(XLNX_SDK_DIR)/libsrc/csi_v1_2/src
+XLNX_VDMA_DIR  ?= $(XLNX_SDK_DIR)/libsrc/axivdma_v6_7/src
+XLNX_MIPI_DIR  ?= $(XLNX_SDK_DIR)/libsrc/csi_v1_4/src
 
 CFILES = $(SRC_PATH)/main.c\
          $(SRC_PATH)/ioctl.c\
